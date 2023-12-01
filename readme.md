@@ -3,7 +3,7 @@
 
 ## Setting Up Dev Environment
 - Clone the repository
-- `NPM Install``
+- `NPM Install`
 - That's it!
 
 ## Notes on the project
