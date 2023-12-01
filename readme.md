@@ -2,15 +2,12 @@
 2023 Edition: NodeJS Express
 
 ## Setting Up Dev Environment
-> Clone the repository
-
-> NPM Install
-
-> That's it!
+- Clone the repository
+- `NPM Install``
+- That's it!
 
 ## Notes on the project
-
-> All of the source-data files are using my puzzle inputs, make sure you update them with your data
+- All of the source-data files are using my puzzle inputs, make sure you update them with your data
 
 ## Some notes when developing
 Testing a function: 
