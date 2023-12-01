@@ -4,7 +4,7 @@ const dt = readFileSync('app/day1/test.txt', 'utf8');
 
 test('Test Part 1', () => {
   const input = dt.split('\n');
-  const expectedOutput = 24000;
+  const expectedOutput = 142;
   
   const result = calculate(input);
   

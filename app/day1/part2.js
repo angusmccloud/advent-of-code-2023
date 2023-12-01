@@ -1,38 +1,47 @@
 import { readFileSync } from 'fs';
 const text = readFileSync('app/day1/data.txt', 'utf8');
 
+const numberMap = [
+  { word: 'one', replacement: '1' },
+  { word: 'two', replacement: '2' },
+  { word: 'three', replacement: '3' },
+  { word: 'four', replacement: '4' },
+  { word: 'five', replacement: '5' },
+  { word: 'six', replacement: '6' },
+  { word: 'seven', replacement: '7' },
+  { word: 'eight', replacement: '8' },
+  { word: 'nine', replacement: '9' },
+];
+
 export const calculate = (input) => {
-  // Given the input array of strings, calculate a result as follows:
-  // The strings are either blank of have a number in them
-  // We want to create a list of the total number of groups in the array. A group is defined as "all of the numbers between an empty string"
-  // Once we have those groupings, create the sum of all values in that group
-  // Then return the sum of the top 3 groups
-  const groups = [];
-  let currentGroup = [];
-  input.forEach((line) => {
-    if (line === '') {
-      groups.push(currentGroup);
-      currentGroup = [];
-    } else {
-      currentGroup.push(line);
+  const numbers = input.map((line) => {
+    const numbersInLine = [];
+    // Search left-to-right in the string for numbers *or* words in numberMap
+    // As you find them, push into numbersInLine
+    // Then take the first and last digit from the array
+    // Return them as a 2-digit number
+    let i = 0;
+    while(i < line.length) {
+      const char = line[i];
+      if(char.match(/\d/)) {
+        numbersInLine.push(char);
+      } else {
+        for(let j = 0; j < numberMap.length; j++) {
+          const num = numberMap[j];
+          if(line.substring(i, i + num.word.length) === num.word) {
+            numbersInLine.push(num.replacement);
+          }
+        }
+      }
+      i++;
     }
-  });
-  groups.push(currentGroup);
-
-  const groupTotals = groups.map((group) => {
-    return group.reduce((acc, line) => {
-      return acc + parseInt(line);
-    }, 0);
+    const first = numbersInLine[0];
+    const last = numbersInLine[numbersInLine.length - 1];
+    return parseInt(first + last);
   });
 
-  const sorted = groupTotals.sort((a, b) => {
-    return b - a;
-  });
-
-  const top3 = sorted.slice(0, 3);
-
-  const sum = top3.reduce((acc, total) => {
-    return acc + total;
+  const sum = numbers.reduce((acc, num) => {
+    return acc + num;
   });
 
   return sum;

@@ -1,10 +1,10 @@
 import { calculate } from './part2.js';
 import { readFileSync } from 'fs';
-const dt = readFileSync('app/day1/test.txt', 'utf8');
+const dt = readFileSync('app/day1/test2.txt', 'utf8');
 
 test('Test Part 2', () => {
   const input = dt.split('\n');
-  const expectedOutput = 45000;
+  const expectedOutput = 281;
   
   const result = calculate(input);
   
