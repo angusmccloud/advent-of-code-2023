@@ -4,6 +4,7 @@ const port = 3000;
 import { resultWrapper } from './app/utils.js';
 import { part1 as day1part1, part2 as day1part2 } from './app/day1/index.js';
 import { part1 as day2part1, part2 as day2part2 } from './app/day2/index.js';
+import { part1 as day3part1, part2 as day3part2 } from './app/day3/index.js';
 const numberOfDays = 3;
 
 // Day 1, Parts 1 and 2
@@ -12,6 +13,9 @@ app.get('/1/2', (req, res) => res.send(resultWrapper(day1part2(), 1, 2)));
 // Day 2, Parts 1 and 2
 app.get('/2/1', (req, res) => res.send(resultWrapper(day2part1(), 2, 1)));
 app.get('/2/2', (req, res) => res.send(resultWrapper(day2part2(), 2, 2)));
+// Day 3, Parts 1 and 2
+app.get('/3/1', (req, res) => res.send(resultWrapper(day3part1(), 3, 1)));
+app.get('/3/2', (req, res) => res.send(resultWrapper(day3part2(), 3, 2)));
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
