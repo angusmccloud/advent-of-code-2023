@@ -46,9 +46,7 @@ export const calculate = (input) => {
   let sum = 0
   for (let i = 0; i < numbers.length; i++) {
     const number = numbers[i];
-    const row = number.row;
-    const startColumn = number.startColumn;
-    const endColumn = number.endColumn;
+    const { row, startColumn, endColumn } = number;
     const isAbove = symbolPositions.filter((symbolPosition) => {
       return symbolPosition.row === row - 1 && symbolPosition.column >= startColumn -1 && symbolPosition.column <= endColumn +1;
     });
@@ -62,8 +60,6 @@ export const calculate = (input) => {
       return symbolPosition.row === row && symbolPosition.column === endColumn + 1;
     });
     const isInAnyPosition = isAbove.length > 0 || isBelow.length > 0 || isLeft.length > 0 || isRight.length > 0;
-
-
 
     // console.log('-- for Number X, adding length --', number.number, isInAnyPosition);
     if (isInAnyPosition) {

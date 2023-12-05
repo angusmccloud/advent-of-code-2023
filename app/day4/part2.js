@@ -39,8 +39,6 @@ export const calculate = (input) => {
     };
   });
 
-  // console.log(lotteryCards);
-
   for(let i = 0; i < lotteryCards.length; i++) {
     // Loop through each Lottery Card
     // On each card, look at the numberThatMatch, numberOfThisCard, and cardNumber
@@ -56,6 +54,8 @@ export const calculate = (input) => {
       }
     }
   }
+
+  console.log(lotteryCards);
 
   // Sum the numberOfThisCard
   const numberOfCards = lotteryCards.reduce((acc, card) => {
