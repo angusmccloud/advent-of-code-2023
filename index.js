@@ -7,7 +7,8 @@ import { part1 as day2part1, part2 as day2part2 } from './app/day2/index.js';
 import { part1 as day3part1, part2 as day3part2 } from './app/day3/index.js';
 import { part1 as day4part1, part2 as day4part2 } from './app/day4/index.js';
 import { part1 as day5part1, part2 as day5part2 } from './app/day5/index.js';
-const numberOfDays = 5;
+import { part1 as day6part1, part2 as day6part2 } from './app/day6/index.js';
+const numberOfDays = 6;
 
 // Day 1, Parts 1 and 2
 app.get('/1/1', (req, res) => res.send(resultWrapper(day1part1(), 1, 1)));
@@ -24,6 +25,9 @@ app.get('/4/2', (req, res) => res.send(resultWrapper(day4part2(), 4, 2)));
 // Day 5, Parts 1 and 2
 app.get('/5/1', (req, res) => res.send(resultWrapper(day5part1(), 5, 1)));
 app.get('/5/2', (req, res) => res.send(resultWrapper(day5part2(), 5, 2)));
+// Day 6, Parts 1 and 2
+app.get('/6/1', (req, res) => res.send(resultWrapper(day6part1(), 6, 1)));
+app.get('/6/2', (req, res) => res.send(resultWrapper(day6part2(), 6, 2)));
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
