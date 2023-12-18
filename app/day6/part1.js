@@ -59,7 +59,6 @@ export const calculate = (input) => {
 
   // console.log(timeDistanceArray);
 
-
   return answer;
 }
 
